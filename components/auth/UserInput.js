@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import React from "react";
 
-export default function UserInput({ name }) {
+export default function UserInput({ name, value, setValue }) {
   return (
     <View style={{ marginHorizontal: 24 }}>
       <Text style={{ marginVertical: 12, color: "#666" }}>{name}</Text>
@@ -12,7 +12,8 @@ export default function UserInput({ name }) {
           borderBottomColor: "#8e93a1",
           marginBottom: 30,
         }}
-        onChangeText={(text) => console.log(text)}
+        value = {value}
+        onChangeText={(text) => setValue(text)}
       />
     </View>
   );
