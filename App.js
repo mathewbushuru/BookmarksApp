@@ -1,11 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+
+import Welcome from "./components/Welcome";
 
 export default function App() {
+  const names = ["Mathew", "Mark", "Glo"];
+
   return (
     <View style={styles.container}>
-      <Text>Bookmarks App!</Text>
-      <StatusBar style="auto" />
+      <Text>Bookmarks App</Text>
+
+      {names.map((name) => (
+        <Welcome name={name} key={name} />
+      ))}
     </View>
   );
 }
@@ -13,8 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
